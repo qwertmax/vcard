@@ -79,3 +79,7 @@ Phone:
   Mobile: +7000000000
   Business: +7000000000
 ```
+
+here is example of Contact QR Code
+
+![Maxim Tishchenko](https://raw.githubusercontent.com/wiki/qwertmax/vcard/imgs/max.png)
