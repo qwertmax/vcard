@@ -19,10 +19,10 @@ type Vcard struct {
 }
 
 func (v Vcard) String() string {
-	output := "BEGIN:VCARD\nVERSION:4.0\n" +
+	output := "BEGIN:VCARD\nVERSION:3.0\n" +
 		"N:" + v.LastName + ";" + v.FirstName + ";" + v.MiddleName + ";\n"
 	if len(v.FirstName) > 0 {
-		output += "FN:" + v.FirstName + "\n"
+		output += "FN:" + fmt.Sprintf("%q", v.FirstName) + "\n"
 	}
 
 	if len(v.Company) > 0 {
