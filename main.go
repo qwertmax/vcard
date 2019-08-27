@@ -8,9 +8,9 @@ import (
 
 func main() {
 	vcard := vcard.Vcard{
-		FirstName:  "Max",
-		LastName:   "Tishchenko",
-		MiddleName: "Nikolaevish",
+		FirstName:  "Jef",
+		LastName:   "Lee",
+		MiddleName: "Taylor",
 		Company:    "Burning Buttons",
 		Email: vcard.Email{
 			Business: "max@example.com",
