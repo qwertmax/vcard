@@ -1,73 +1,47 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"io/ioutil"
 
 	"github.com/qwertmax/vcard-generator/vcard"
+	"github.com/skip2/go-qrcode"
 	"gopkg.in/yaml.v2"
 )
 
 func main() {
-	// vcard := vcard.Vcard{
-	// 	FirstName:  "Jef",
-	// 	LastName:   "Lee",
-	// 	MiddleName: "Taylor",
-	// 	Company:    "Burning Buttons",
-	// 	Email: vcard.Email{
-	// 		Business: "max@example.com",
-	// 		Personal: "test@gmail.com",
-	// 	},
-	// 	Title: "CEO",
-	// 	Node:  "For more than 10 years I've been helping our clients to move forward from ideas to solutions by providing highly profitable applications.",
-	// 	WorkAddr: vcard.Address{
-	// 		Street:      "TRA TA TA",
-	// 		City:        "Saint-Petersburg",
-	// 		Country:     "Russia",
-	// 		CountryCode: "RU",
-	// 		State:       "Leningradskaya Oblast",
-	// 		ZipCode:     "190005",
-	// 		Type:        "WORK",
-	// 		Preferenced: true,
-	// 	},
-	// 	Website: "https://burningbuttons.com",
-	// 	HomeAddr: vcard.Address{
-	// 		Street:      "example",
-	// 		City:        "Saint-Petersburg",
-	// 		Country:     "Russia",
-	// 		CountryCode: "RU",
-	// 		State:       "Leningradskaya Oblast",
-	// 		ZipCode:     "196084",
-	// 		Type:        "HOME",
-	// 	},
-	// 	Birthday: vcard.Birthday{
-	// 		Year:  1985,
-	// 		Month: 12,
-	// 		Day:   25,
-	// 	},
-	// 	Phone: vcard.Phone{
-	// 		Main:     "+70000000000",
-	// 		Business: "+70000000001",
-	// 		Home:     "+70000000002",
-	// 	},
-	// }
+	ymlFile := flag.String("f", "", "input file name [-f example.yml]")
+	vcfFile := flag.String("o", "out.vcf", "output file name")
+	qrFile := flag.String("qr", "v_card.png", "QR Code image file")
+	flag.Parse()
 
-	yamlFile, err := ioutil.ReadFile("max.yml")
+	if len(*ymlFile) == 0 {
+		fmt.Println("specify yml file '-f example.yml'")
+		return
+	}
+
+	yamlFile, err := ioutil.ReadFile(*ymlFile)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	v := vcard.Vcard{}
+	vcard := vcard.Vcard{}
 
-	err = yaml.Unmarshal(yamlFile, &v)
+	err = yaml.Unmarshal(yamlFile, &vcard)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	fmt.Println(v)
+	err = ioutil.WriteFile(*vcfFile, []byte(fmt.Sprint(vcard)), 0644)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
-	// fmt.Println(vcard)
-	// qrcode.WriteFile(fmt.Sprint(vcard), qrcode.High, 256, "qr.png")
+	if len(*qrFile) > 0 {
+		qrcode.WriteFile(fmt.Sprint(vcard), qrcode.High, 256, *qrFile)
+	}
 }
