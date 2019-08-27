@@ -7,11 +7,11 @@ type Birthday struct {
 	Year, Month, Day int
 }
 
-func (b *Birthday) String() string {
-	return fmt.Sprintf("BDAY: %d%d%d", b.Year, b.Month, b.Day)
+func (b Birthday) String() string {
+	return fmt.Sprintf("BDAY: %d%d%d\n", b.Year, b.Month, b.Day)
 }
 
-func (b *Birthday) valid() bool {
+func (b Birthday) valid() bool {
 	if b.Year < 1900 {
 		return false
 	}
