@@ -13,8 +13,8 @@ func main() {
 		MiddleName: "Nikolaevish",
 		Company:    "Burning Buttons",
 		Email: vcard.Email{
-			Business: "max@burningbuttons.com",
-			Personal: "qwertmax@gmail.com",
+			Business: "max@example.com",
+			Personal: "test@gmail.com",
 		},
 		Title: "CEO",
 		Node:  "For more than 10 years I've been helping our clients to move forward from ideas to solutions by providing highly profitable applications.",
