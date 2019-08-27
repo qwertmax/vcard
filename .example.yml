@@ -1,0 +1,37 @@
+FirstName:  Lee
+LastName:   Taylor
+MiddleName: No Idea
+Company:    Burning Buttons
+Title: CEO
+Note: For more than 10 years I've been helping our clients to move forward from ideas to solutions by providing highly profitable applications.
+Email:
+  Personal: email_Personal@example.com
+  Business: email_Business@example.com
+HomeAddr:
+  Street: "qqq"
+  City: "qqq"
+  State: "qqq"
+  Country: "qqq"
+  ZipCode: "qqq"
+  CountryCode: "qqq"
+  Type: "HOME"
+  Preferenced: n
+WorkAddr:
+  Street: "qqq"
+  City: "qqq"
+  State: "qqq"
+  Country: "qqq"
+  ZipCode: "qqq"
+  CountryCode: "qqq"
+  Type: "WORK"
+  Preferenced: y
+Website: "https://example.com"
+Birthday:
+  Year: 1900
+  Month: 11
+  Day: 05
+Phone:
+  Main: +7000000000
+  Home: +7000000000
+  Mobile: +7000000000
+  Business: +7000000000

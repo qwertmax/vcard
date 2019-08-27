@@ -2,10 +2,10 @@ package vcard
 
 // Phone type
 type Phone struct {
-	Main     string
-	Home     string
-	Mobile   string
-	Business string
+	Main     string `yaml:"Main"`
+	Home     string `yaml:"Home"`
+	Mobile   string `yaml:"Mobile"`
+	Business string `yaml:"Business"`
 }
 
 func (p Phone) String() string {

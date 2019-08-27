@@ -2,7 +2,8 @@ package vcard
 
 // Email type
 type Email struct {
-	Personal, Business string
+	Personal string `yaml:"Personal"`
+	Business string `yaml:"Business"`
 }
 
 func (e Email) String() string {

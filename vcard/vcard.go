@@ -4,18 +4,18 @@ import "fmt"
 
 // Vcard type
 type Vcard struct {
-	FirstName  string `yaml:"FirstName"`
-	LastName   string `yaml:"LastName"`
-	MiddleName string `yaml:"MiddleName"`
-	Company    string `yaml:"Company"`
-	Email      Email
-	Title      string `yaml:"Title"`
-	HomeAddr   Address
-	WorkAddr   Address
-	Website    string `yaml:"Website"`
-	Phone      Phone
-	Birthday   Birthday
-	Node       string `yaml:"Note"`
+	FirstName  string   `yaml:"FirstName"`
+	LastName   string   `yaml:"LastName"`
+	MiddleName string   `yaml:"MiddleName"`
+	Company    string   `yaml:"Company"`
+	Email      Email    `yaml:"Email"`
+	Title      string   `yaml:"Title"`
+	HomeAddr   Address  `yaml:"HomeAddr"`
+	WorkAddr   Address  `yaml:"WorkAddr"`
+	Website    string   `yaml:"Website"`
+	Phone      Phone    `yaml:"Phone"`
+	Birthday   Birthday `yaml:"Birthday"`
+	Note       string   `yaml:"Note"`
 }
 
 func (v Vcard) String() string {
@@ -42,8 +42,8 @@ func (v Vcard) String() string {
 		output += fmt.Sprint(v.Birthday)
 	}
 
-	if len(v.Node) > 0 {
-		output += "NOTE:" + v.Node + "\n"
+	if len(v.Note) > 0 {
+		output += "NOTE:" + v.Note + "\n"
 	}
 
 	if len(v.Website) > 0 {

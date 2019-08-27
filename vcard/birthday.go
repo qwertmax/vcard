@@ -4,11 +4,13 @@ import "fmt"
 
 // Birthday type
 type Birthday struct {
-	Year, Month, Day int
+	Year  int `yaml:"Year"`
+	Month int `yaml:"Month"`
+	Day   int `yaml:"Day"`
 }
 
 func (b Birthday) String() string {
-	return fmt.Sprintf("BDAY: %d%d%d\n", b.Year, b.Month, b.Day)
+	return fmt.Sprintf("BDAY:%d%02d%02d\n", b.Year, b.Month, b.Day)
 }
 
 func (b Birthday) valid() bool {

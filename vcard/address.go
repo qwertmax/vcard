@@ -2,14 +2,14 @@ package vcard
 
 // Address type
 type Address struct {
-	Street      string
-	City        string
-	State       string
-	Country     string
-	ZipCode     string
-	CountryCode string
-	Type        string
-	Preferenced bool
+	Street      string `yaml:"Street"`
+	City        string `yaml:"City"`
+	State       string `yaml:"State"`
+	Country     string `yaml:"Country"`
+	ZipCode     string `yaml:"ZipCode"`
+	CountryCode string `yaml:"CountryCode"`
+	Type        string `yaml:"Type"`
+	Preferenced bool   `yaml:"Preferenced"`
 }
 
 func (v Address) String() string {
