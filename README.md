@@ -39,36 +39,36 @@ go get github.com/qwertmax/vcard
 vcard -f max.yml -o max.vcf -qr max.png
 ```
 
-max.yml
+*max.yml*
 ```
 FirstName:  Lee
 LastName:   Taylor
-MiddleName: No Idea
+MiddleName: J
 Company:    Burning Buttons
-Title: CEO
-Note: For more than 10 years I've been helping our clients to move forward from ideas to solutions by providing highly profitable applications.
+Title: Golang Developer
+Note: Golang the best.
 Email:
   Personal: email_Personal@example.com
   Business: email_Business@example.com
 HomeAddr:
-  Street: "qqq"
-  City: "qqq"
-  State: "qqq"
-  Country: "qqq"
-  ZipCode: "qqq"
-  CountryCode: "qqq"
+  Street: "Marshal Zhukov Street 21 5th floor"
+  City: "Omsk"
+  State: "Omskaya oblast"
+  Country: "Russia"
+  ZipCode: "644024"
+  CountryCode: "RU"
   Type: "HOME"
   Preferenced: n
 WorkAddr:
-  Street: "qqq"
-  City: "qqq"
-  State: "qqq"
-  Country: "qqq"
-  ZipCode: "qqq"
-  CountryCode: "qqq"
+  Street: "Marshal Zhukov Street 21 5th floor"
+  City: "Omsk"
+  State: "Omskaya oblast"
+  Country: "Russia"
+  ZipCode: "644024"
+  CountryCode: "RU"
   Type: "WORK"
   Preferenced: y
-Website: "https://example.com"
+Website: "https://qwertmax.ru"
 Birthday:
   Year: 1900
   Month: 11
@@ -79,4 +79,3 @@ Phone:
   Mobile: +7000000000
   Business: +7000000000
 ```
-
