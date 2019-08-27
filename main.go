@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/qwertmax/vcard-generator/vcard"
+	"github.com/qwertmax/vcard/vcard"
 	"github.com/skip2/go-qrcode"
 	"gopkg.in/yaml.v2"
 )
